@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/courselist/db" VERSION="20101203" COMMENT="XMLDB file for Moodle mod/courselist"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd" >
+  <TABLES>
+    <TABLE NAME="courselist" COMMENT="Default comment for courselist, please edit me">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="course" NEXT="lectureid"/>
+        <FIELD NAME="lectureid" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="" PREVIOUS="name" NEXT="seb_no"/>
+        <FIELD NAME="seb_no" TYPE="char" LENGTH="2" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" COMMENT="" PREVIOUS="lectureid" NEXT="termyear"/>
+        <FIELD NAME="termyear" TYPE="char" LENGTH="4" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" COMMENT="" PREVIOUS="seb_no" NEXT="termid"/>
+        <FIELD NAME="termid" TYPE="char" LENGTH="2" NOTNULL="true" UNSIGNED="true"  SEQUENCE="false" COMMENT="" PREVIOUS="termyear" NEXT="gwamok_name"/>
+        <FIELD NAME="gwamok_name" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" PREVIOUS="termid" NEXT="intro"/>
+        <FIELD NAME="intro" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="gwamok_name" NEXT="tutorid"/>
+        <FIELD NAME="tutorid" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" PREVIOUS="intro" NEXT="point"/>
+        <FIELD NAME="point" TYPE="char" LENGTH="2" NOTNULL="false" UNSIGNED="true"  SEQUENCE="false" PREVIOUS="tutorid" NEXT="jumsu_rate1"/>
+        <FIELD NAME="jumsu_rate1" TYPE="char" LENGTH="4" NOTNULL="false" UNSIGNED="true"  SEQUENCE="false" PREVIOUS="point" NEXT="jumsu_rate2"/>
+        <FIELD NAME="jumsu_rate2" TYPE="char" LENGTH="4" NOTNULL="false" UNSIGNED="true"  SEQUENCE="false" PREVIOUS="jumsu_rate1" NEXT="jumsu_rate3"/>
+        <FIELD NAME="jumsu_rate3" TYPE="char" LENGTH="4" NOTNULL="false" UNSIGNED="true"  SEQUENCE="false" PREVIOUS="jumsu_rate2" NEXT="jumsu_rate4"/>
+        <FIELD NAME="jumsu_rate4" TYPE="char" LENGTH="4" NOTNULL="false" UNSIGNED="true"  SEQUENCE="false" PREVIOUS="jumsu_rate3" NEXT="jumsu_rate5"/>
+        <FIELD NAME="jumsu_rate5" TYPE="char" LENGTH="4" NOTNULL="false" UNSIGNED="true"  SEQUENCE="false" PREVIOUS="jumsu_rate4" NEXT="isclose"/>
+        <FIELD NAME="isclose" TYPE="char" LENGTH="1" NOTNULL="false"  SEQUENCE="false" PREVIOUS="jumsu_rate5" NEXT="planurl"/>
+        <FIELD NAME="planurl" TYPE="char" LENGTH="330" NOTNULL="false"  SEQUENCE="false" PREVIOUS="isclose" NEXT="inonline"/>
+        <FIELD NAME="inonline" TYPE="char" LENGTH="1" NOTNULL="false" SEQUENCE="false" PREVIOUS="planurl"  NEXT="lec_aim1"/>
+        <FIELD NAME="lec_aim1" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="inonline" NEXT="lec_aim2"/>
+        <FIELD NAME="lec_aim2" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim1" NEXT="lec_aim3"/>
+        <FIELD NAME="lec_aim3" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim2" NEXT="lec_aim4"/>
+        <FIELD NAME="lec_aim4" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim3" NEXT="lec_aim5"/>
+        <FIELD NAME="lec_aim5" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim4" NEXT="lec_aim6"/>
+        <FIELD NAME="lec_aim6" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim5" NEXT="lec_aim7"/>
+        <FIELD NAME="lec_aim7" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim6" NEXT="lec_aim8"/>
+        <FIELD NAME="lec_aim8" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim7" NEXT="lec_aim9"/>
+        <FIELD NAME="lec_aim9" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim8" NEXT="lec_aim10"/>
+        <FIELD NAME="lec_aim10" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim9" NEXT="lec_aim11"/>
+        <FIELD NAME="lec_aim11" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim10" NEXT="lec_aim12"/>
+        <FIELD NAME="lec_aim12" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim11" NEXT="lec_aim13"/>
+        <FIELD NAME="lec_aim13" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim12" NEXT="lec_aim14"/>
+        <FIELD NAME="lec_aim14" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim13" NEXT="lec_aim15"/>
+        <FIELD NAME="lec_aim15" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim14" NEXT="lec_aim16"/>
+        <FIELD NAME="lec_aim16" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim15" NEXT="lec_aim17"/>
+        <FIELD NAME="lec_aim17" TYPE="char" LENGTH="530" NOTNULL="false" SEQUENCE="false" PREVIOUS="lec_aim16"/>
+       </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="tutorid" UNIQUE="false" FIELDS="tutorid"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
