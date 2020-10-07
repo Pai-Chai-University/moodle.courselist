@@ -3,7 +3,7 @@
 $informixdir = getenv("INFORMIXDIR");
 $uname = "";
 $password= "";
-$conn_string = "informix:host=203.250.129.135;service=1200;database=pcuhs;server=centertli;protocol=onsoctcp;
+$conn_string = "informix:host=###.###.###.###;service=1200;database=pcuhs;server=centertli;protocol=onsoctcp;
 TRANSLATIONDLL=$informixdir/lib/esql/igo4a304.so;
 CLIENT_LOCALE=en_US.utf8;DB_LOCALE=en_US.819";
 
